@@ -20,6 +20,8 @@
 ###########################################################################  */
 
 .card{
+  position: sticky;
+  top:0;
   width: 50%;
   background-color: var(--lightest);
   border-radius: var(--radius-m);
@@ -28,5 +30,6 @@
 }
 
 .card figcaption{
+  display: none;
   padding: var(--l) var(--m) var(--xl) var(--m);
 }
