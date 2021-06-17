@@ -22,14 +22,22 @@
 .card{
   position: sticky;
   top:0;
-  width: 50%;
+  width: clamp(300px,50%,600px);
   background-color: var(--lightest);
   border-radius: var(--radius-m);
   overflow: hidden;
   box-shadow: var(--n-shadow-l);
+  display:flex;
+  flex-direction: column;
+}
+
+.card h2{
+  position: absolute;
+  top: 0;
+  /*za srednata stoynost ne slagay var*/
+  font-size: clamp(var(--l),6vw, var(--xxxl));
 }
 
 .card figcaption{
-  display: none;
   padding: var(--l) var(--m) var(--xl) var(--m);
 }
