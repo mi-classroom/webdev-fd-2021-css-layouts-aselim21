@@ -1,14 +1,13 @@
 /* Content Wrap
 ###########################################################################  */
 
-.content-wrap{
+.content-wrap {
+  display: flex;
   width: 100vw;
   height: 150vh;
-  background-color: var(--light);
-
-  display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  background-color: var(--light);
 }
 
 .content-wrap:nth-child(even) {
@@ -19,46 +18,48 @@
 /* Card
 ###########################################################################  */
 
-.card{
+.card {
   position: sticky;
-  top:0;
-  width: clamp(300px,50%,600px);
-  
+  top: 0;
+  display: flex;
+  overflow: hidden;
+  width: clamp(300px, 50%, 600px);
   background-color: var(--lightest);
   border-radius: var(--radius-m);
-  overflow: hidden;
   box-shadow: var(--n-shadow-l);
-  display:flex;
 }
 
-.card h2{
+.card h2 {
   position: absolute;
   top: 0;
-  /*za srednata stoynost ne slagay var*/
-  font-size: clamp(var(--l),4vw, var(--xxxl));
+
+  /* za srednata stoynost ne slagay var */
+  font-size: clamp(var(--l), 4vw, var(--xxxl));
 }
 
-.card figcaption{
+.card figcaption {
   padding: var(--l) var(--m) var(--xl) var(--m);
 }
 
-@media (orientation: landscape){
-  .card{
+@media (orientation: landscape) {
+  .card {
     flex-direction: row;
   }
-  img{
+
+  img {
     width: 150vw;
   }
-  .card h2{
+
+  .card h2 {
     position: static;
-    /*za srednata stoynost ne slagay var*/
-    font-size: clamp(var(--l),4vw, var(--xxxl));
+
+    /* za srednata stoynost ne slagay var */
+    font-size: clamp(var(--l), 4vw, var(--xxxl));
   }
 }
-@media (orientation: portrait){
-  .card{
+
+@media (orientation: portrait) {
+  .card {
     flex-direction: column;
   }
-  
- 
 }
