@@ -1,14 +1,13 @@
 /* Content Wrap
 ###########################################################################  */
 
-.content-wrap{
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--light);
-
+.content-wrap {
   display: flex;
-  justify-content: center;
+  width: 100vw;
+  height: 150vh;
   align-items: center;
+  justify-content: center;
+  background-color: var(--light);
 }
 
 .content-wrap:nth-child(even) {
@@ -19,17 +18,48 @@
 /* Card
 ###########################################################################  */
 
-.card{
+.card {
   position: sticky;
-  top:0;
-  width: 50%;
+  top: 0;
+  display: flex;
+  overflow: hidden;
+  width: clamp(300px, 50%, 600px);
   background-color: var(--lightest);
   border-radius: var(--radius-m);
-  overflow: hidden;
   box-shadow: var(--n-shadow-l);
 }
 
-.card figcaption{
-  display: none;
+.card h2 {
+  position: absolute;
+  top: 0;
+
+  /* za srednata stoynost ne slagay var */
+  font-size: clamp(var(--l), 4vw, var(--xxxl));
+}
+
+.card figcaption {
   padding: var(--l) var(--m) var(--xl) var(--m);
+}
+
+@media (orientation: landscape) {
+  .card {
+    flex-direction: row;
+  }
+
+  img {
+    width: 150vw;
+  }
+
+  .card h2 {
+    position: static;
+
+    /* za srednata stoynost ne slagay var */
+    font-size: clamp(var(--l), 4vw, var(--xxxl));
+  }
+}
+
+@media (orientation: portrait) {
+  .card {
+    flex-direction: column;
+  }
 }
